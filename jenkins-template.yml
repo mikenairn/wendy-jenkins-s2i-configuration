@@ -38,7 +38,12 @@ objects:
   kind: ImageStream
   metadata:
     name: ${JENKINS_SERVICE_NAME}
-
+  spec:
+    tags:
+    - from:
+        kind: DockerImage
+        name: docker.io/fhwendy/jenkins:latest
+      name: latest
 
 - apiVersion: v1
   kind: ImageStream
@@ -166,32 +171,6 @@ objects:
     - type: ImageChange
     - type: ConfigChange
 
-- apiVersion: v1
-  kind: BuildConfig
-  metadata:
-    name: ${JENKINS_SERVICE_NAME}
-  spec:
-    output:
-      to:
-        kind: ImageStreamTag
-        name: ${JENKINS_SERVICE_NAME}:latest
-    runPolicy: Serial
-    source:
-      dockerfile: |-
-        FROM openshift/jenkins-2-rhel7
-        USER example
-      git:
-        uri: https://github.com/feedhenry/wendy-jenkins-s2i-configuration.git
-      type: Git
-    strategy:
-      sourceStrategy:
-        from:
-          kind: DockerImage
-          name: registry.access.redhat.com/openshift3/jenkins-2-rhel7:latest
-      type: Source
-    triggers:
-    - type: ImageChange
-    - type: ConfigChange
 - apiVersion: v1
   kind: DeploymentConfig
   metadata:
