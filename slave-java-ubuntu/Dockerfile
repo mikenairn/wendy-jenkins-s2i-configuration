@@ -12,8 +12,11 @@ RUN (curl -v https://www.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/a
     mkdir -p /var/log/feedhenry/core/ && \
     chown -R 1001:0 /var/log/feedhenry/core/ && \
     chmod -R g+w /var/log/feedhenry/core/ && \
-    echo 127.0.0.1 loghost >> /etc/hosts
-
+    mkdir -p /etc/feedhenry/ && \
+    chown -R 1001:0 /etc/feedhenry/ && \
+    chmod -R g+w /etc/feedhenry/ && \
+    echo 127.0.0.1 loghost >> /etc/hosts && \
+    apt-get install -y mysql-client
 
 USER 1001
 RUN mkdir -p /home/jenkins/.m2
