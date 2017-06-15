@@ -23,11 +23,13 @@ RUN (curl -v https://www.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/a
     mkdir -p /log/metrics/ && \
     mkdir -p /log/millicore/ && \
     mkdir -p /log/status/ && \
-    mkdir -p /log/tomcate/ && \
-    mkdir -p /log/tomcate/ && \
-    mkdir -p /log/tomcate/ && \
+    mkdir -p /log/tomcat/ && \
     chown -R 1001:0 /log/ && \
     chmod -R g+w /log/ && \
+    mkdir -p /work/tomcat/release/node01/ && \
+    mkdir -p /work/tomcat/release/node02/ && \
+    chown -R 1001:0 /work/ && \
+    chmod -R g+w /work/ && \
     apt-get install -y mysql-client && \
     apt-get install -y iputils-ping && \
     apt-get install -y netcat
