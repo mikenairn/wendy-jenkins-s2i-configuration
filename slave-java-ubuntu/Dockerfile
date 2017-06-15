@@ -16,6 +16,7 @@ RUN (curl -v https://www.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/a
     chown -R 1001:0 /etc/feedhenry/ && \
     chmod -R g+w /etc/feedhenry/ && \
     apt-get install -y mysql-client && \
+    apt-get install -y iputils-ping && \
     apt-get install -y netcat
 
 USER 1001
