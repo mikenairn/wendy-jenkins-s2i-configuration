@@ -14,5 +14,7 @@ docker run --rm --entrypoint=/bin/sh ${IMAGE_NAME} -ic 'tar --version'
 docker run --rm --entrypoint=/bin/sh ${IMAGE_NAME} -ic 'java -version'
 docker run --rm --entrypoint=/bin/sh ${IMAGE_NAME} -ic 'ant -version'
 docker run --rm --entrypoint=/bin/sh ${IMAGE_NAME} -ic 'mvn --version'
+docker run --rm --entrypoint=/bin/sh ${IMAGE_NAME} -ic 'mysql --version'
+docker run --rm --entrypoint=/bin/sh ${IMAGE_NAME} -ic 'nc -help'
 
 echo "SUCCESS!"
