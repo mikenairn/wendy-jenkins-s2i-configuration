@@ -15,6 +15,10 @@ RUN (curl -v https://www.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/a
     mkdir -p /etc/feedhenry/ && \
     chown -R 1001:0 /etc/feedhenry/ && \
     chmod -R g+w /etc/feedhenry/ && \
+    mkdir -p /opt/coolstack/apache2/htdocs/static/ic/script && \
+    mkdir -p /opt/coolstack/apache2/htdocs/static/wc/script && \
+    echo "MOCK SCRIPT" > /opt/coolstack/apache2/htdocs/static/ic/script/0-script.js && \
+    echo "MOCK SCRIPT" > /opt/coolstack/apache2/htdocs/static/wc/script/0-script.js && \
     apt-get install -y mysql-client && \
     apt-get install -y iputils-ping && \
     apt-get install -y netcat
