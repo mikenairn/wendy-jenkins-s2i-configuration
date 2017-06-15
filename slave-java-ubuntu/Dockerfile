@@ -19,6 +19,15 @@ RUN (curl -v https://www.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/a
     mkdir -p /opt/coolstack/apache2/htdocs/static/wc/script && \
     echo "MOCK SCRIPT" > /opt/coolstack/apache2/htdocs/static/ic/script/0-script.js && \
     echo "MOCK SCRIPT" > /opt/coolstack/apache2/htdocs/static/wc/script/0-script.js && \
+    mkdir -p /log/apache/ && \
+    mkdir -p /log/metrics/ && \
+    mkdir -p /log/millicore/ && \
+    mkdir -p /log/status/ && \
+    mkdir -p /log/tomcate/ && \
+    mkdir -p /log/tomcate/ && \
+    mkdir -p /log/tomcate/ && \
+    chown -R 1001:0 /log/ && \
+    chmod -R g+w /log/ && \
     apt-get install -y mysql-client && \
     apt-get install -y iputils-ping && \
     apt-get install -y netcat
