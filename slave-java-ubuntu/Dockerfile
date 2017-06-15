@@ -24,6 +24,7 @@ RUN (curl -v https://www.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/a
     mkdir -p /log/millicore/ && \
     mkdir -p /log/status/ && \
     mkdir -p /log/tomcat/ && \
+    mkdir -p /log/tomcat/release/node01/ && \
     chown -R 1001:0 /log/ && \
     chmod -R g+w /log/ && \
     mkdir -p /work/tomcat/release/node01/ && \
