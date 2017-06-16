@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Server port="48105" shutdown="SHUTDOWN">
+
+<!--
+  <Listener className="org.apache.catalina.cor.AprLifecycleListener" SSLEngine="on" />
+  <Listener className="org.apache.catalina.core.JasperListener" />
+  <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener" />
+  <Listener className="org.apache.catalina.mbeans.ServerLifecycleListener" />
+  <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
+-->
+
+<!--
+  <GlobalNamingResources>
+
+    <Resource name="UserDatabase" auth="Container"
+              type="org.apache.catalina.UserDatabase"
+              description="User database that can be updated and saved"
+              factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
+              pathname="conf/tomcat-users.xml" />
+
+  </GlobalNamingResources>
+-->
+
+  <Service name="Catalina">
+
+    <Connector port="48180"
+               protocol="HTTP/1.1" 
+               connectionTimeout="20000"
+               maxThreads="150"
+               minSpareThreads="25"
+               maxSpareThreads="75"
+               enableLookups="false"
+               acceptCount="100"
+               disableUploadTimeout="true"
+               maxHttpHeaderSize="8192"
+               compression="on"
+               compressionMinSize="2048"
+               compressableMimeType="text/html, text/xml, text/css, text/plain, text/javascript, application/x-javascript, application/javascript" />
+
+    <Connector port="48109"
+               protocol="AJP/1.3"
+               connectionTimeout="20000"
+               redirectPort="41443"
+               maxThreads="150"
+               minSpareThreads="25"
+               maxSpareThreads="75"
+               backlog="333"
+               enableLookups="false"
+               compression="on"
+               compressionMinSize="2048"
+               compressableMimeType="text/html, text/xml, text/css, text/plain, text/javascript, application/x-javascript, application/javascript" />
+
+
+<!--
+    <Engine name="Catalina"
+            defaultHost="localhost"
+            jvmRoute="node02">
+-->
+
+    <Engine name="Catalina"
+            defaultHost="feedhenry.example.com"
+            jvmRoute="node02">
+
+<!--
+      <Realm className="org.apache.catalina.realm.UserDatabaseRealm"
+             resourceName="UserDatabase" />
+-->
+
+      <Host name="feedhenry.example.com"
+            appBase="webapps"
+            unpackWARs="true"
+            autoDeploy="true"
+            xmlValidation="false"
+            xmlNamespaceAware="false" />
+
+<!--
+      <Host name="localhost"
+            appBase="webapps"
+            unpackWARs="true"
+            autoDeploy="true"
+            xmlValidation="false"
+            xmlNamespaceAware="false" />
+-->
+
+    </Engine>
+
+  </Service>
+
+</Server>
