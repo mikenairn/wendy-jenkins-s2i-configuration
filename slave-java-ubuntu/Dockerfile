@@ -19,6 +19,8 @@ RUN (curl -v https://www.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/a
     mkdir -p /opt/coolstack/apache2/htdocs/static/wc/script && \
     echo "MOCK SCRIPT" > /opt/coolstack/apache2/htdocs/static/ic/script/0-script.js && \
     echo "MOCK SCRIPT" > /opt/coolstack/apache2/htdocs/static/wc/script/0-script.js && \
+    chown -R 1001:0 /opt/coolstack/ && \
+    chmod -R g+w /opt/coolstack/ && \
     mkdir -p /log/apache/ && \
     mkdir -p /log/metrics/ && \
     mkdir -p /log/millicore/ && \
