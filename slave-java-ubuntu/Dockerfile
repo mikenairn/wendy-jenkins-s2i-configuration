@@ -1,4 +1,4 @@
-FROM docker.io/fhwendy/jenkins-slave-base-ubuntu:latest
+FROM docker.io/fhwendy/jenkins-slave-base-ubuntu:jdk7
 
 MAINTAINER Adam Saleh <asaleh@redhat.com>
 
