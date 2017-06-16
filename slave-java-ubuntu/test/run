@@ -16,5 +16,6 @@ docker run --rm --entrypoint=/bin/sh ${IMAGE_NAME} -ic 'ant -version'
 docker run --rm --entrypoint=/bin/sh ${IMAGE_NAME} -ic 'mvn --version'
 docker run --rm --entrypoint=/bin/sh ${IMAGE_NAME} -ic 'mysql --version'
 docker run --rm --entrypoint=/bin/sh ${IMAGE_NAME} -ic 'nc -help'
+docker run --rm --entrypoint=/bin/sh ${IMAGE_NAME} -ic 'ls -la /work/tomcat/release/node01'
 
 echo "SUCCESS!"
